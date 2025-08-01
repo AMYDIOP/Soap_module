@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+
+  mysql-m1gl:
+    image: mysql:8.0
+    container_name: container-mysql-m1gl
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_DATABASE: soapdb
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data_m1gl:/var/lib/mysql
+    networks:
+      - dbm1gl
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "root", "--password="]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  phpmyadmin-m1gl:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: container-phpmyadmin-m1gl
+    ports:
+      - "81:80"
+    environment:
+      PMA_HOST: mysql-m1gl
+      PMA_USER: root
+      PMA_PASSWORD: ""  # vide pour root
+    depends_on:
+      - mysql-m1gl
+    restart: unless-stopped
+    networks:
+      - dbm1gl
+
+volumes:
+  mysql_data_m1gl:
+
+networks:
+  dbm1gl:
+#docker-compose up -d
