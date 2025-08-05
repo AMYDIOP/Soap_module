@@ -20,19 +20,8 @@ Ce projet implémente deux services web SOAP en Java EE pour la gestion des enti
 
 Le projet est structuré comme suit :
 
-```
-src/
-├── com.groupeisi.metier.dto/
-│   ├── EtudiantDto.java
-│   └── FiliereDto.java
-├── com.groupeisi.webservices.services/
-│   ├── EtudiantWebService.java
-│   ├── EtudiantWebServiceImpl.java
-│   ├── FiliereWebService.java
-│   └── FiliereWebServiceImpl.java
-└── resources/
-    ├── web.xml
-    └── sun-jaxws.xml
+<img width="521" height="929" alt="image" src="https://github.com/user-attachments/assets/28a83116-b4ec-41ce-a0f4-b98634cf96d9" />
+
 ```
 
 ## 1. Configuration des services
