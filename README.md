@@ -12,9 +12,9 @@ Ce projet implémente deux services web SOAP en Java EE pour la gestion des enti
 - Apache Tomcat 10
 - MySQL 8 (Docker)
 - phpMyAdmin (Docker)
-- Eclipse / IntelliJ IDEA
-- Postman / ReadyAPI pour les tests
-- JAXB pour la sérialisation XML
+-  IntelliJ IDEA
+-  ReadyAPI pour les tests
+  
 
 ## Architecture du projet
 
